@@ -1,51 +1,32 @@
 {
-  "name": "@el3um4s/typescript-npm-package-starter",
-  "version": "1.0.5",
-  "description": "Typescript NPM Package Starter",
+  "name": "util-utils",
+  "version": "1.0.0",
+  "description": "Zero-dependency everyday utility library for lazy Javascript developers",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "test": "jest --config jestconfig.json",
+    "test": "jest --runInBand --config jestconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags",
-    "check-updates": "npx npm-check-updates",
-    "check-updates:minor": "npx npm-check-updates --target minor",
-    "check-updates:patch": "npx npm-check-updates --target patch"
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/el3um4s/typescript-npm-package-starter.git"
+    "url": "git+https://github.com/SrIzan10/util-utils.git"
   },
   "files": [
     "lib/**/*"
   ],
   "keywords": [
     "typescript",
-    "npm",
-    "template",
-    "ts"
+    "utils"
   ],
-  "author": "Samuele C. De Tomasi",
+  "author": "Sr Izan",
   "license": "MIT",
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/el3um4s"
-    },
-    {
-      "type": "individual",
-      "url": "https://www.paypal.me/el3um4s"
-    }
-  ],
-  "bugs": {
-    "url": "https://github.com/el3um4s/typescript-npm-package-starter/issues"
-  },
-  "homepage": "https://github.com/el3um4s/typescript-npm-package-starter#readme",
+  "homepage": "https://github.com/SrIzan10/util-utils#readme",
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "@types/node": "^18.13.0",
