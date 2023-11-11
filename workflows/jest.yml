@@ -1,0 +1,57 @@
+---
+resources:
+- name: repo
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/srizan10/util-utils.git
+
+- name: node-image
+  type: registry-image
+  source:
+    repository: node
+    tag: lts-alpine
+
+jobs:
+- name: test
+  public: true
+  plan:
+  - get: node-image
+  - get: repo
+    trigger: true
+  - task: install
+    image: node-image
+    config:
+      inputs:
+      - name: repo
+      outputs:
+      - name: dependencies
+        path: repo/node_modules
+      platform: linux
+      run:
+        path: yarn
+        dir: repo
+  - task: build
+    image: node-image
+    config:
+      inputs:
+      - name: repo
+      - name: dependencies
+        path: repo/node_modules
+      platform: linux
+      run:
+        path: yarn
+        args: ["build"]
+        dir: repo
+  - task: test
+    image: node-image
+    config:
+      inputs:
+      - name: repo
+      - name: dependencies
+        path: repo/node_modules
+      platform: linux
+      run:
+        path: yarn
+        args: ["test"]
+        dir: repo

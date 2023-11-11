@@ -1,1 +1,1 @@
-export { randomString } from './utils/randomString.js';
+export { randomString } from './utils/randomString.ts';
