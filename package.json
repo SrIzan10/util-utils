@@ -1,46 +1,29 @@
 {
   "name": "util-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero-dependency everyday utility library for lazy Javascript developers",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "lint": "eslint . --ext .ts",
-    "test": "jest --runInBand --config jestconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "postversion": "git push && git push --tags"
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SrIzan10/util-utils.git"
-  },
-  "files": [
-    "lib/**/*"
-  ],
-  "keywords": [
-    "typescript",
-    "utils"
-  ],
-  "author": "Sr Izan",
+  "repository": "https://github.com/SrIzan10/util-utils.git",
+  "author": "SrIzan10 <66965250+SrIzan10@users.noreply.github.com>",
   "license": "MIT",
-  "homepage": "https://github.com/SrIzan10/util-utils#readme",
   "devDependencies": {
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.13.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "ansi-regex": ">=6.0.1",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "jest": "^29.4.1",
-    "ts-jest": "^29.0.5",
+    "@types/jest": "^29.5.8",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "tsup": "^7.2.0",
     "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsup"
   }
 }

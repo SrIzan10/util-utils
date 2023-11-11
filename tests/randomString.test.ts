@@ -1,4 +1,4 @@
-import { randomString } from '../index'
+import { randomString } from '../src/index'
 
 describe('randomString', () => {
     it('should return a random string with the length of 10', () => {
