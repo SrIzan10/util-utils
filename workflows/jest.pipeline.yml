@@ -5,6 +5,7 @@ resources:
   icon: github
   source:
     uri: https://github.com/srizan10/util-utils.git
+    branch: main
 
 - name: node-image
   type: registry-image
