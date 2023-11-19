@@ -1,4 +1,5 @@
 import { randomString } from '../src/index.ts'
+import { describe, it, expect } from 'vitest'
 
 describe('randomString', () => {
     it('should return a random string with the length of 10', () => {
