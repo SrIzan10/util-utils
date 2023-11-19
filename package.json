@@ -1,6 +1,6 @@
 {
   "name": "util-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Zero-dependency everyday utility library for lazy Javascript developers",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
