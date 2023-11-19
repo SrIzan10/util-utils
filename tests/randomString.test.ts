@@ -1,4 +1,4 @@
-import { randomString } from '../src/index.ts'
+import { randomString } from '../src/index'
 import { describe, it, expect } from 'vitest'
 
 describe('randomString', () => {

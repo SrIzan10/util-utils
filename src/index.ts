@@ -1,1 +1,2 @@
-export { randomString } from './utils/randomstring.ts';
+export { randomString } from './utils/randomstring';
+export { percentage } from './utils/percentage';
